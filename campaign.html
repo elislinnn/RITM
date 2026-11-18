@@ -13,7 +13,106 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<style>
+body{margin:0;background:#F4F6FB}
+a{color:#2F5BFF;text-decoration:none}a:hover{color:#2442C9}
+.r,.r *{box-sizing:border-box}
+.r{font-family:Inter,Arial,sans-serif;color:#12172B;-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.5}
+.r p,.r h1,.r h2,.r h3,.r h4{margin:0}
+.mn{font-family:Manrope,Inter,Arial,sans-serif}
+.h1{font-family:Manrope,Inter,sans-serif;font-weight:800;font-size:76px;line-height:1.0;letter-spacing:-3px}
+.h2{font-family:Manrope,Inter,sans-serif;font-weight:800;font-size:48px;line-height:1.06;letter-spacing:-1.6px}
+.h3{font-family:Manrope,Inter,sans-serif;font-weight:700;font-size:24px;line-height:1.2;letter-spacing:-.4px}
+.h4{font-family:Manrope,Inter,sans-serif;font-weight:700;font-size:17px;line-height:1.3;letter-spacing:-.2px}
+.lead{font-size:19px;line-height:1.5;color:#4A5270}
+.b{font-size:15px;line-height:1.5;color:#4A5270}
+.s{font-size:13px;line-height:1.4;color:#5F6786}
+.xs{font-size:12px;line-height:1.35;color:#5F6786}
+.ey{font-size:13px;font-weight:600;color:#2F5BFF;letter-spacing:.2px}
+.num{font-family:Manrope,Inter,sans-serif;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.tn{font-variant-numeric:tabular-nums}
+.ink{color:#12172B}.blue{color:#2F5BFF}.good{color:#12845A}.warn{color:#A15C00}.bad{color:#C4333A}
+.card{background:#FCFCFE;border:1px solid #E3E7F1;border-radius:20px;padding:24px;box-shadow:0 2px 4px rgba(18,23,43,.04),0 16px 40px rgba(18,23,43,.06)}
+.flat{box-shadow:none}
+.soft{background:#EAF0FF;border:1px solid #D6E0FF;box-shadow:none}
+.dk{background:#151B42;border:1px solid #283064;box-shadow:none;color:#EEF1FA}
+.grad{background:linear-gradient(135deg,#2448F0 0%,#4566FF 60%,#6F84FF 100%);border:0;color:#F7F8FF;box-shadow:0 20px 40px rgba(47,91,255,.22)}
+.grad .s,.grad .b,.grad .xs{color:#DCE3FF}
+.dk .s,.dk .b,.dk .xs{color:#AEB6D6}
+.wcard{background:#FFF8EA;border:1px solid #FFE3AE;border-radius:20px;padding:20px 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;font-size:15px;line-height:1;border:0;cursor:pointer;font-family:Inter,Arial,sans-serif;white-space:nowrap;transition:transform .12s ease,background-color .12s ease}
+.btn:active{transform:scale(.97)}
+.btn .ar{transition:transform .12s ease}.btn:hover .ar{transform:translateX(4px)}
+.sm{min-height:40px;padding:0 16px;font-size:14px}
+.bp{background:#2F5BFF;color:#FFFFFF}.bp:hover{background:#2448F0;color:#FFFFFF}
+.bd{background:#12172B;color:#F4F6FB}.bd:hover{background:#262C48;color:#F4F6FB}
+.bl{background:#FCFCFE;color:#12172B;border:1px solid #E3E7F1}.bl:hover{color:#12172B;background:#F0F3FA}
+.bw{background:#FFFFFF;color:#2442C9}.bw:hover{color:#2442C9;background:#EEF2FF}
+.bg{background:rgba(255,255,255,.16);color:#FFFFFF}.bg:hover{color:#FFFFFF;background:rgba(255,255,255,.24)}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:600;line-height:1;background:#EAF0FF;color:#2442C9;white-space:nowrap}
+.cg{background:#DDF5EA;color:#0F6E4B}.cw{background:#FFF1D6;color:#8A4F00}.cr{background:#FDE4E5;color:#A8272E}
+.cn{background:#FCFCFE;border:1px solid #E3E7F1;color:#12172B}.cdk{background:#1E2552;color:#C9D2FF}
+.cwh{background:rgba(255,255,255,.18);color:#FFFFFF}
+.bar{height:10px;border-radius:6px;background:#E3E7F1;overflow:hidden;display:flex}
+.bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#2F5BFF,#7A8CFF)}
+.seg{display:flex;height:12px;border-radius:6px;overflow:hidden;gap:3px}
+.seg i{display:block;height:100%}
+.row{display:flex;gap:16px;align-items:center}
+.col{display:flex;flex-direction:column}
+.sp{justify-content:space-between}
+.wrap{flex-wrap:wrap}
+.grow{flex:1 1 0;min-width:0}
+.i{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icb{width:40px;height:40px;border-radius:12px;background:#EAF0FF;color:#2F5BFF;display:flex;align-items:center;justify-content:center;flex:none}
+.icg{background:#DDF5EA;color:#12845A}.icw{background:#FFF1D6;color:#A15C00}.icr{background:#FDE4E5;color:#C4333A}.icd{background:#1E2552;color:#93A9FF}
+.hr{height:1px;background:#E3E7F1;border:0;margin:0}
+.av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:none;color:#FFFFFF;background:linear-gradient(135deg,#7A8CFF,#2F5BFF)}
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.list > * + *{border-top:1px solid #E3E7F1}
+.inp{display:flex;align-items:center;gap:10px;min-height:52px;padding:0 16px;border:1px solid #D9DEEA;border-radius:14px;background:#FFFFFF;font-size:16px;color:#12172B}
+.inp.on{border-color:#2F5BFF;box-shadow:0 0 0 4px rgba(47,91,255,.12)}
+.lbl{font-size:13px;font-weight:600;color:#4A5270;margin-bottom:8px;display:block}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{font-size:12px;font-weight:600;color:#5F6786;text-align:left;padding:10px 12px;border-bottom:1px solid #E3E7F1}
+.tbl td{padding:14px 12px;border-bottom:1px solid #E3E7F1;vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.r input[type=range]{width:100%;accent-color:#2F5BFF;height:28px;margin:0}
+.dot{width:8px;height:8px;border-radius:50%;flex:none;display:inline-block}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.rise{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion: reduce){.r *{animation:none !important;transition:none !important}}
+
+html{scroll-behavior:smooth}
+body{min-height:100vh}
+.demo-bar{position:relative;z-index:40;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;align-items:center;padding:8px 16px;background:#12172B;color:#DCE3FF;font:500 13px/1.4 Inter,Arial,sans-serif;text-align:center}
+.demo-bar a{color:#C9F2E2;font-weight:600}
+.mtab{display:none;font-family:Inter,Arial,sans-serif}
+body.phone{background:#E6EAF4}
+body.phone > .r{box-shadow:0 0 0 1px #E3E7F1,0 30px 80px rgba(18,23,43,.12)}
+html.io .rv,html.io .cnt,html.io .typ,html.io .ans,html.io .draw,html.io .lockp{animation-play-state:paused}
+html.io .sc2,html.io .sc3{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+html.io .sc2.show,html.io .sc3.show{transform:none}
+@media (max-width: 900px){
+ aside.side{display:none !important}
+ .tsearch{display:none !important}
+ main.cab{padding:16px 16px 104px !important}
+ .mtab{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;height:76px;padding:8px 8px 18px;background:rgba(252,252,254,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid #E3E7F1;justify-content:space-around;align-items:flex-start}
+ .r .h2{font-size:30px !important;letter-spacing:-.8px}
+ .r .num{letter-spacing:-.6px}
+ .card{padding:18px}
+}
+html,body{overflow-x:clip}
+@media (max-width: 600px){
+ .r .row{flex-wrap:wrap}
+ .r .row[style*="overflow-x:auto"]{flex-wrap:nowrap}
+ .r [style*="padding:40px 64px"]{padding:24px 20px !important}
+ .r [style*="padding:56px;"]{padding:28px !important}
+ .r [style*="padding:40px 40px"],.r [style*="padding:48px 40px"],.r [style*="padding:24px 40px"],.r [style*="padding:20px 40px"],.r [style*="padding:28px 40px"],.r [style*="padding:16px 40px"]{padding-left:16px !important;padding-right:16px !important}
+ .r .h1{font-size:44px !important;letter-spacing:-1.6px}
+ .r [style*="grid-template-columns:minmax(160px,1fr) 140px"]{grid-template-columns:minmax(0,1fr) !important;gap:12px}
+ .r [style*="grid-template-columns:minmax(160px,1fr) 140px"] > svg{display:none}
+}
+</style>
 <style>
 @media (max-width: 1000px){.g12>*{grid-column:1/-1 !important}}
 .tab{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border-radius:999px;font-size:14px;font-weight:600;color:#4A5270}
@@ -24,6 +123,95 @@
 <body class="">
 <div class="demo-bar" role="note"><span>Демо РИТМ: данные вымышленные, оплаты не проводятся.</span> <a href="index.html">На главную</a><a href="#" data-pilot="">Записаться в пилот</a></div><div class="r" style="min-height:100vh;display:flex;flex-wrap:wrap;background:#F4F6FB"><aside class="side" style="flex:1 1 248px;background:#FCFCFE;border-right:1px solid #E3E7F1;padding:24px 16px;display:flex;flex-direction:column;gap:24px;min-height:100%"><div style="padding:0 8px"><a href="index.html" aria-label="РИТМ, на главную" style="display:inline-flex;align-items:center;gap:10px"><span style="width:32px;height:32px;border-radius:10px;background:#2F5BFF;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;flex:none"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="stroke-width:2"><path d="M6 21h12L14.5 3h-5z"/><path d="M12 16l5-10"/></svg></span><span class="mn" style="font-weight:800;font-size:20px;letter-spacing:3px;color:#12172B">РИТМ</span></a></div><nav aria-label="Разделы кабинета" class="col" style="gap:4px"><a href="home.html" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;font-size:15px;color:#4A5270"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg><span>Главная</span></a><a href="campaign.html" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;font-size:15px;background:#EAF0FF;color:#2442C9;font-weight:600"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Сборы</span></a><a href="metronome.html" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;font-size:15px;color:#4A5270"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 21h12L14.5 3h-5z"/><path d="M12 16l5-10"/><path d="M8 17.5h8"/></svg><span>Метроном</span><span class="chip" style="margin-left:auto;min-height:22px;padding:0 8px;font-size:11px;background:#12172B;color:#F4F6FB">Pro</span></a><a href="campaign.html" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;font-size:15px;color:#4A5270"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v9H5v-9"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg><span>Награды</span><span class="xs tn" style="margin-left:auto">0 / 41</span></a><a href="rating.html" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;font-size:15px;color:#4A5270"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><span>Рейтинг</span></a><a href="pricing.html" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;font-size:15px;color:#4A5270"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16 15h2"/></svg><span>Тарифы</span></a></nav><div style="margin-top:auto" class="col"><div class="card flat" style="padding:16px;border-radius:16px;display:flex;gap:12px;align-items:center"><div class="av">АС</div><div class="col"><span style="font-weight:600;font-size:14px">Алина Смирнова</span><span class="xs">★ 4,9 · Надёжный</span></div></div></div></aside><main class="cab" style="flex:999 1 560px;min-width:0;padding:24px 40px 56px"><div style="max-width:1120px;margin:0 auto"><header class="row sp wrap" style="gap:16px;margin-bottom:28px"><div class="s">Сборы / Свой кабинет на Красном</div><div class="row" style="gap:12px"><label class="inp tsearch" style="min-height:44px;width:280px;font-size:14px;color:#5F6786"><svg class="i" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span>Поиск по сборам и операциям</span></label><a href="home.html" aria-label="Уведомления, 3 новых" class="btn bl sm" style="position:relative;width:44px;padding:0"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span style="position:absolute;top:6px;right:8px;width:16px;height:16px;border-radius:50%;background:#2F5BFF;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">3</span></a><a href="wizard.html" class="btn bd sm"><svg class="i" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Новый сбор</a></div></header><div class="row sp wrap" style="gap:16px;margin-bottom:20px"><div class="row" style="gap:16px"><span style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#FFDCCB,#C8C3FF);flex:none" aria-hidden="true"></span><div><h1 class="h2" style="font-size:36px">Свой кабинет на Красном</h1><div class="row wrap" style="gap:8px;margin-top:6px"><span class="chip cg">Идёт сбор · 9 дней</span><span class="chip cn">Всё или ничего</span><span class="chip">Кампания</span></div></div></div><div class="row" style="gap:10px"><a href="sbor.html" class="btn bl sm"><svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>Открыть страницу</a><a href="sbor.html" class="btn bp sm"><svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>Поделиться</a></div></div><div class="card flat row" style="gap:10px;padding:18px 22px;margin-bottom:20px;overflow-x:auto"><span class="row" style="gap:8px;font-size:13px;font-weight:500;color:#12172B;white-space:nowrap"><span style="width:22px;height:22px;border-radius:50%;background:#2F5BFF;color:#fff;display:flex;align-items:center;justify-content:center;flex:none"><svg class="i" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Черновик</span><span style="flex:1;min-width:12px;height:2px;background:#2F5BFF"></span><span class="row" style="gap:8px;font-size:13px;font-weight:500;color:#12172B;white-space:nowrap"><span style="width:22px;height:22px;border-radius:50%;background:#2F5BFF;color:#fff;display:flex;align-items:center;justify-content:center;flex:none"><svg class="i" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Проверка</span><span style="flex:1;min-width:12px;height:2px;background:#2F5BFF"></span><span class="row" style="gap:8px;font-size:13px;font-weight:500;color:#12172B;white-space:nowrap"><span style="width:22px;height:22px;border-radius:50%;background:#2F5BFF;color:#fff;display:flex;align-items:center;justify-content:center;flex:none"><svg class="i" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Готов</span><span style="flex:1;min-width:12px;height:2px;background:#2F5BFF"></span><span class="row" style="gap:8px;font-size:13px;font-weight:700;color:#12172B;white-space:nowrap"><span style="width:22px;height:22px;border-radius:50%;background:#FFFFFF;border:6px solid #2F5BFF;flex:none;box-shadow:0 0 0 4px rgba(47,91,255,.15)"></span>Идёт сбор</span><span style="flex:1;min-width:12px;height:2px;background:#DCE2EF"></span><span class="row" style="gap:8px;font-size:13px;font-weight:500;color:#5F6786;white-space:nowrap"><span style="width:22px;height:22px;border-radius:50%;border:2px solid #C3CADB;flex:none"></span>Цель достигнута</span><span style="flex:1;min-width:12px;height:2px;background:#DCE2EF"></span><span class="row" style="gap:8px;font-size:13px;font-weight:500;color:#5F6786;white-space:nowrap"><span style="width:22px;height:22px;border-radius:50%;border:2px solid #C3CADB;flex:none"></span>Закупка</span><span style="flex:1;min-width:12px;height:2px;background:#DCE2EF"></span><span class="row" style="gap:8px;font-size:13px;font-weight:500;color:#5F6786;white-space:nowrap"><span style="width:22px;height:22px;border-radius:50%;border:2px solid #C3CADB;flex:none"></span>Награды</span><span style="flex:1;min-width:12px;height:2px;background:#DCE2EF"></span><span class="row" style="gap:8px;font-size:13px;font-weight:500;color:#5F6786;white-space:nowrap"><span style="width:22px;height:22px;border-radius:50%;border:2px solid #C3CADB;flex:none"></span>Завершён</span></div><nav aria-label="Разделы сбора" class="row wrap" style="gap:4px;margin-bottom:20px"><a href="campaign.html" class="tab on">Обзор</a><a href="campaign.html" class="tab">Бэкеры · 41</a><a href="purchase.html" class="tab">Деньги и закупка</a><a href="campaign.html" class="tab">Награды</a><a href="campaign.html" class="tab">Новости</a></nav><div class="g12"><div style="grid-column:span 8;min-width:0;"><div class="card col" style="gap:16px;padding:26px"><div class="row sp wrap" style="gap:12px;align-items:flex-end"><div><p class="s">Собрано</p><p class="num tn" style="font-size:48px;line-height:1">201 600 ₽</p><p class="s" style="margin-top:4px">из 280 000 ₽ · 72%</p></div><div class="row" style="gap:28px"><div><p class="h3 tn">41</p><p class="xs">бэкер</p></div><div><p class="h3 tn">4 917 ₽</p><p class="xs">средний взнос</p></div><div><p class="h3 tn">9</p><p class="xs">дней осталось</p></div></div></div><div class="bar" style="height:12px"><i style="width:72%"></i></div><svg viewBox="0 0 640 226" width="100%" height="226" role="img" aria-label="Накопленная сумма сбора: 201 600 рублей за 22 дня, прогноз 292 000 к 1 декабря при цели 280 000"><line x1="40" x2="636" y1="200.0" y2="200.0" stroke="#EEF1F7"/><text x="34" y="204.0" font-size="11" fill="#5F6786" text-anchor="end">0</text><line x1="40" x2="636" y1="145.0" y2="145.0" stroke="#EEF1F7"/><text x="34" y="149.0" font-size="11" fill="#5F6786" text-anchor="end">100</text><line x1="40" x2="636" y1="90.0" y2="90.0" stroke="#EEF1F7"/><text x="34" y="94.0" font-size="11" fill="#5F6786" text-anchor="end">200</text><line x1="40" x2="636" y1="35.0" y2="35.0" stroke="#EEF1F7"/><text x="34" y="39.0" font-size="11" fill="#5F6786" text-anchor="end">300</text><line x1="40" x2="636" y1="46.0" y2="46.0" stroke="#12172B" stroke-dasharray="4 4"/><text x="632" y="40.0" font-size="11" fill="#12172B" text-anchor="end" font-weight="600">цель 280 тыс.</text><path d="M48.0,200.0 L48.0,200.0 L67.2,186.8 L86.4,177.4 L105.6,171.4 L124.8,168.1 L144.0,163.7 L163.2,160.9 L182.4,156.0 L201.6,152.7 L220.8,148.8 L240.0,145.6 L259.2,142.8 L278.4,138.9 L297.6,135.7 L316.8,130.2 L336.0,125.2 L355.2,119.7 L374.4,115.8 L393.6,110.3 L412.8,105.9 L432.0,102.1 L451.2,96.1 L470.4,89.1 L470.4,200.0 Z" fill="#2F5BFF" fill-opacity=".08"/><path d="M470.4,89.1 L547.2,55.9 L624.0,22.9 L624.0,55.9 L547.2,72.4 L470.4,89.1 Z" fill="#2F5BFF" fill-opacity=".10"/><polyline points="48.0,200.0 67.2,186.8 86.4,177.4 105.6,171.4 124.8,168.1 144.0,163.7 163.2,160.9 182.4,156.0 201.6,152.7 220.8,148.8 240.0,145.6 259.2,142.8 278.4,138.9 297.6,135.7 316.8,130.2 336.0,125.2 355.2,119.7 374.4,115.8 393.6,110.3 412.8,105.9 432.0,102.1 451.2,96.1 470.4,89.1" fill="none" stroke="#2F5BFF" stroke-width="2.5" stroke-linejoin="round"/><path d="M470.4,89.1 L547.2,64.2 L624.0,39.4" fill="none" stroke="#2F5BFF" stroke-width="2.5" stroke-dasharray="6 5"/><circle cx="470.4" cy="89.1" r="5" fill="#2F5BFF"/><circle cx="624.0" cy="39.4" r="4" fill="#FFFFFF" stroke="#2F5BFF" stroke-width="2"/><text x="616.0" y="29.4" font-size="11" fill="#2442C9" text-anchor="end" font-weight="600">прогноз 292 тыс.</text><text x="48.0" y="218" font-size="11" fill="#5F6786" text-anchor="middle">1 нояб</text><text x="182.4" y="218" font-size="11" fill="#5F6786" text-anchor="middle">8</text><text x="316.8" y="218" font-size="11" fill="#5F6786" text-anchor="middle">15</text><text x="470.4" y="218" font-size="11" fill="#5F6786" text-anchor="middle">сегодня</text><text x="624.0" y="218" font-size="11" fill="#5F6786" text-anchor="middle">1 дек</text></svg></div></div><div style="grid-column:span 4;min-width:0;"><div class="card soft col" style="gap:14px;padding:26px;height:100%"><div class="row" style="gap:10px"><span class="icb" style="background:#FFFFFF"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 21h12L14.5 3h-5z"/><path d="M12 16l5-10"/><path d="M8 17.5h8"/></svg></span><span class="h4">Прогноз Метронома</span></div><div class="col" style="align-items:center"><svg viewBox="0 0 200 116" width="220" height="127" role="img" aria-label="Шанс успеха 84 процентов"><path d="M16 100 A84 84 0 0 1 58 27" fill="none" stroke="#F3B0B3" stroke-width="14" stroke-linecap="round"/><path d="M68 22 A84 84 0 0 1 132 22" fill="none" stroke="#FFD79A" stroke-width="14"/><path d="M142 27 A84 84 0 0 1 184 100" fill="none" stroke="#9FDDC2" stroke-width="14" stroke-linecap="round"/><g style="transform:rotate(61.2deg);transform-origin:100px 100px"><line x1="100" y1="100" x2="100" y2="34" stroke="#12172B" stroke-width="4" stroke-linecap="round"/></g><circle cx="100" cy="100" r="8" fill="#12172B"/></svg><p class="num tn good" style="font-size:40px;margin-top:-6px">84%</p><p class="s">шанс собрать цель</p></div><p class="b ink">Нужно ещё <b>78 400 ₽</b> — около <b>16 бэкеров</b> со средним взносом.</p><p class="s">Вчера +12 600 ₽. Чтобы успеть, нужно в среднем 8 700 ₽ в день.</p></div></div><div style="grid-column:span 7;min-width:0;"><div class="card col" style="padding:26px"><div class="row sp wrap" style="gap:8px;margin-bottom:6px"><span class="h4">Кому написать сегодня</span><span class="chip">12 клиентов · пакет «Кампания»</span></div><p class="s" style="margin-bottom:8px">Постоянные клиенты, которые ещё не поддержали сбор. Метроном подготовил сообщение для каждого.</p><div class="list"><div class="row" style="gap:12px;padding:12px 0"><span class="av" style="width:36px;height:36px;font-size:12px">ОК</span><span class="col grow"><span style="font-weight:600;font-size:14px">Ольга К.</span><span class="xs">3 визита за 3 месяца · последний 12 ноября</span></span><a href="chat.html" class="btn bl sm"><svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m21.5 3.5-19 7.3c-1 .4-1 1.6 0 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.7-2.5 4.8 3.5c.7.5 1.7.1 1.9-.8L23 4.7c.2-1-.6-1.6-1.5-1.2z"/><path d="m7.2 14.2 9.8-6.4"/></svg>Написать</a></div><div class="row" style="gap:12px;padding:12px 0"><span class="av" style="width:36px;height:36px;font-size:12px">ДМ</span><span class="col grow"><span style="font-weight:600;font-size:14px">Дарья М.</span><span class="xs">4 визита · последний 16 ноября</span></span><a href="chat.html" class="btn bl sm"><svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m21.5 3.5-19 7.3c-1 .4-1 1.6 0 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.7-2.5 4.8 3.5c.7.5 1.7.1 1.9-.8L23 4.7c.2-1-.6-1.6-1.5-1.2z"/><path d="m7.2 14.2 9.8-6.4"/></svg>Написать</a></div><div class="row" style="gap:12px;padding:12px 0"><span class="av" style="width:36px;height:36px;font-size:12px">КЛ</span><span class="col grow"><span style="font-weight:600;font-size:14px">Ксения Л.</span><span class="xs">3 визита · последний 9 ноября</span></span><a href="chat.html" class="btn bl sm"><svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m21.5 3.5-19 7.3c-1 .4-1 1.6 0 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.7-2.5 4.8 3.5c.7.5 1.7.1 1.9-.8L23 4.7c.2-1-.6-1.6-1.5-1.2z"/><path d="m7.2 14.2 9.8-6.4"/></svg>Написать</a></div><div class="row" style="gap:12px;padding:12px 0"><span class="av" style="width:36px;height:36px;font-size:12px">АП</span><span class="col grow"><span style="font-weight:600;font-size:14px">Анна П.</span><span class="xs">2 визита · последний 18 ноября</span></span><a href="chat.html" class="btn bl sm"><svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m21.5 3.5-19 7.3c-1 .4-1 1.6 0 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.7-2.5 4.8 3.5c.7.5 1.7.1 1.9-.8L23 4.7c.2-1-.6-1.6-1.5-1.2z"/><path d="m7.2 14.2 9.8-6.4"/></svg>Написать</a></div><div class="row" style="gap:12px;padding:12px 0"><span class="av" style="width:36px;height:36px;font-size:12px">ВС</span><span class="col grow"><span style="font-weight:600;font-size:14px">Виктория С.</span><span class="xs">2 визита · последний 5 ноября</span></span><a href="chat.html" class="btn bl sm"><svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m21.5 3.5-19 7.3c-1 .4-1 1.6 0 1.9l4.7 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.7-2.5 4.8 3.5c.7.5 1.7.1 1.9-.8L23 4.7c.2-1-.6-1.6-1.5-1.2z"/><path d="m7.2 14.2 9.8-6.4"/></svg>Написать</a></div></div><a href="campaign.html" class="s" style="font-weight:600;margin-top:10px">Показать ещё 7 →</a></div></div><div style="grid-column:span 5;min-width:0;"><div class="col" style="gap:20px"><div class="card col" style="gap:14px;padding:26px"><span class="h4">Откуда бэкеры</span><div class="col" style="gap:6px"><div class="row sp s ink"><span>Telegram-канал</span><b class="tn">46%</b></div><div class="bar" style="height:8px"><i style="width:46%;background:#2F5BFF"></i></div></div><div class="col" style="gap:6px"><div class="row sp s ink"><span>Личные сообщения</span><b class="tn">32%</b></div><div class="bar" style="height:8px"><i style="width:32%;background:#4F6EFF"></i></div></div><div class="col" style="gap:6px"><div class="row sp s ink"><span>QR в салоне</span><b class="tn">15%</b></div><div class="bar" style="height:8px"><i style="width:15%;background:#7A8CFF"></i></div></div><div class="col" style="gap:6px"><div class="row sp s ink"><span>Другое</span><b class="tn">7%</b></div><div class="bar" style="height:8px"><i style="width:7%;background:#C9D2FF"></i></div></div><a href="campaign.html" class="btn bl sm" style="align-self:flex-start;margin-top:4px"><svg class="i" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>Скачать QR для стойки</a></div><a href="purchase.html" class="card col" style="gap:10px;padding:26px;color:#12172B"><div class="row sp"><span class="icb"><svg class="i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span class="xs" style="font-weight:600;color:#2F5BFF">Деньги и закупка →</span></div><p class="s">На номинальном счёте</p><p class="h2 tn" style="font-size:34px">201 600 ₽</p><p class="s">До успеха сбора деньги нельзя потратить — это защита бэкеров.</p></a></div></div><div style="grid-column:span 12;min-width:0;"><div class="card" style="padding:12px 16px 8px"><div class="row sp" style="padding:12px 8px 4px"><span class="h4">Последние бэкеры</span><a href="campaign.html" class="xs" style="font-weight:600">Все 41 →</a></div><div style="overflow-x:auto"><table class="tbl" style="min-width:560px"><thead><tr><th>Бэкер</th><th>Награда</th><th>Сумма</th><th>Когда</th><th>Канал</th></tr></thead><tbody><tr><td style="font-weight:600">Катя В.</td><td>Абонемент на 4 визита</td><td class="tn" style="font-weight:700">5 600 ₽</td><td class="s">сегодня, 10:42</td><td><span class="chip cn" style="min-height:24px">Telegram</span></td></tr><tr><td style="font-weight:600">Марина Д.</td><td>Абонемент на 4 визита</td><td class="tn" style="font-weight:700">5 600 ₽</td><td class="s">сегодня, 09:15</td><td><span class="chip cn" style="min-height:24px">QR</span></td></tr><tr><td style="font-weight:600">Ирина Т.</td><td>Первый визит −30%</td><td class="tn" style="font-weight:700">1 400 ₽</td><td class="s">сегодня, 08:03</td><td><span class="chip cn" style="min-height:24px">Личное</span></td></tr><tr><td style="font-weight:600">Ольга Н.</td><td>Абонемент на 10 визитов</td><td class="tn" style="font-weight:700">12 000 ₽</td><td class="s">вчера, 21:30</td><td><span class="chip cn" style="min-height:24px">Telegram</span></td></tr></tbody></table></div></div></div></div></div></main></div><nav class="mtab" aria-label="Навигация по кабинету"><a href="home.html" class="col" style="align-items:center;gap:2px;min-width:56px;font-size:11px;font-weight:600;color:#5F6786"><svg class="i" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg><span>Главная</span></a><a href="campaign.html" class="col" style="align-items:center;gap:2px;min-width:56px;font-size:11px;font-weight:600;color:#2F5BFF"><svg class="i" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Сбор</span></a><a href="metronome.html" class="col" style="align-items:center;gap:2px;min-width:56px;font-size:11px;font-weight:600;color:#5F6786"><svg class="i" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 21h12L14.5 3h-5z"/><path d="M12 16l5-10"/><path d="M8 17.5h8"/></svg><span>Метроном</span></a><a href="rating.html" class="col" style="align-items:center;gap:2px;min-width:56px;font-size:11px;font-weight:600;color:#5F6786"><svg class="i" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><span>Рейтинг</span></a><a href="pricing.html" class="col" style="align-items:center;gap:2px;min-width:56px;font-size:11px;font-weight:600;color:#5F6786"><svg class="i" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16 15h2"/></svg><span>Тарифы</span></a></nav>
 <script src="assets/config.js"></script>
-<script src="assets/site.js"></script>
+<script>(function(){
+  var cfg = window.RITM_CONFIG || {};
+  document.querySelectorAll('[data-pilot]').forEach(function(a){
+    if (cfg.pilotFormUrl) { a.href = cfg.pilotFormUrl; a.target = '_blank'; a.rel = 'noopener'; }
+    else { a.style.display = 'none'; }
+  });
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var supView = window.CSS && CSS.supports && CSS.supports('animation-timeline: view()');
+  var supScope = window.CSS && CSS.supports && CSS.supports('timeline-scope: --a');
+  if (!supView && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('io');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.style.animationPlayState = 'running'; io.unobserve(e.target); } });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.rv,.cnt,.typ,.ans,.draw,.lockp').forEach(function(el){ io.observe(el); });
+  }
+  if (!supScope) {
+    var steps = document.querySelectorAll('.how .st');
+    var sc = [null, document.querySelector('.sc2'), document.querySelector('.sc3')];
+    if (steps.length === 3 && sc[1]) {
+      var tick = function(){
+        var h = window.innerHeight;
+        for (var i = 1; i < 3; i++) {
+          var top = steps[i].getBoundingClientRect().top;
+          sc[i].classList.toggle('show', top < h * 0.6);
+        }
+      };
+      window.addEventListener('scroll', function(){ requestAnimationFrame(tick); }, { passive: true });
+      tick();
+    }
+  }
+  // ---------- landing: hero counter, backer ticker, honest-goal calculator ----------
+  if (!document.getElementById('calc')) return;
+  var S = { p: 0, bi: 0, price: 214000, clients: 180, check: 1800, ip: false };
+  var names = ['Катя', 'Ольга', 'Дарья', 'Ирина', 'Вика'], amts = [5600, 12000, 5600, 1400, 5600];
+  function f(n){ return Math.round(n).toLocaleString('ru-RU'); }
+  function vals(){
+    var taxRate = S.ip ? 0.06 : 0.04, comm = 0.05;
+    var rew = Math.round(S.price * 0.21 / 100) * 100;
+    var goal = Math.ceil((S.price + rew) / (1 - taxRate - comm) / 1000) * 1000;
+    var tax = Math.round(goal * taxRate), fee = Math.round(goal * comm);
+    var real = S.clients * 0.3 * S.check * 2.7;
+    var lo = Math.round(real * 0.8 / 1000) * 1000, hi = Math.round(real * 1.2 / 1000) * 1000;
+    var chance = Math.max(5, Math.min(95, Math.round(100 / (1 + Math.exp(-7 * (real / goal - 0.78))))));
+    var z = { zoneStyle: 'border-color:#9FDDC2', zoneText: 'good', hintStyle: 'background:#DDF5EA', hint: 'Хороший шанс. Метроном подготовит текст, награды и список клиентов, кому написать в первый день.' };
+    if (chance < 70) z = { zoneStyle: 'border-color:#FFD79A', zoneText: 'warn', hintStyle: 'background:#FFF1D6', hint: 'Средний риск. Разбейте покупку на 2 этапа или добавьте аудиторию: Telegram-канал, QR в точке.' };
+    if (chance < 45) z = { zoneStyle: 'border-color:#F3B0B3', zoneText: 'bad', hintStyle: 'background:#FDE4E5', hint: 'Цель велика для вашей аудитории. Начните с этапа на ' + f(lo) + ' ₽ — успешный сбор снизит комиссию следующего.' };
+    return {
+      amount: f(201600 * S.p), pct: Math.round(72 * S.p), pctw: (72 * S.p).toFixed(1) + '%', backers: Math.round(41 * S.p),
+      bName: names[S.bi], bAmt: f(amts[S.bi]),
+      priceF: f(S.price), clients: S.clients, checkF: f(S.check), goalF: f(goal), rewF: f(rew), taxF: f(tax), feeF: f(fee), taxPct: S.ip ? 6 : 4,
+      loF: f(lo), hiF: f(hi), chance: chance, needle: (-90 + chance * 1.8).toFixed(1),
+      fPrice: S.price, fRew: rew, fTax: tax, fFee: fee,
+      zoneStyle: z.zoneStyle, zoneText: z.zoneText, hintStyle: z.hintStyle, hint: z.hint,
+      selfCls: S.ip ? 'btn sm' : 'btn sm bd', ipCls: S.ip ? 'btn sm bd' : 'btn sm'
+    };
+  }
+  var kEls = document.querySelectorAll('[data-k]');
+  var tpl = { style: document.querySelectorAll('[data-tpl-style]'), 'class': document.querySelectorAll('[data-tpl-class]'), 'aria-label': document.querySelectorAll('[data-tpl-aria-label]') };
+  function fill(t, v){ return t.replace(/\{(\w+)\}/g, function(m, k){ return v[k] != null ? v[k] : ''; }); }
+  function render(){
+    var v = vals();
+    kEls.forEach(function(e){ var x = v[e.getAttribute('data-k')]; if (x != null && e.textContent !== String(x)) e.textContent = x; });
+    tpl.style.forEach(function(e){ e.style.cssText = fill(e.getAttribute('data-tpl-style'), v); });
+    tpl['class'].forEach(function(e){ e.className = fill(e.getAttribute('data-tpl-class'), v); });
+    tpl['aria-label'].forEach(function(e){ e.setAttribute('aria-label', fill(e.getAttribute('data-tpl-aria-label'), v)); });
+  }
+  document.querySelectorAll('[data-in]').forEach(function(inp){
+    var k = inp.getAttribute('data-in');
+    inp.value = S[k];
+    inp.addEventListener('input', function(){ S[k] = Number(inp.value); render(); });
+  });
+  document.querySelectorAll('[data-click]').forEach(function(b){
+    b.addEventListener('click', function(){ S.ip = b.getAttribute('data-click') === 'setIp'; render(); });
+  });
+  render();
+  if (reduce) { S.p = 1; render(); return; }
+  var t0 = performance.now() + 1100;
+  function step(now){
+    var t = Math.min(1, Math.max(0, (now - t0) / 1200));
+    S.p = 1 - Math.pow(1 - t, 3); render();
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+  setInterval(function(){
+    S.bi = (S.bi + 1) % names.length; render();
+    document.querySelectorAll('.swap').forEach(function(el){ el.classList.remove('swap'); void el.offsetWidth; el.classList.add('swap'); });
+  }, 6000);
+})();
+</script>
 </body>
 </html>
